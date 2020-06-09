@@ -6,3 +6,10 @@ export const fetchUser = () =>
         let res = await axios.get('/api/current_user')
         dispatch({type: FETCH_USER, payload: res.data})
     }
+
+export const changeName = (name) => {
+    return {
+        type: "CHANGE_NAME",
+        payload: name
+    }
+}
