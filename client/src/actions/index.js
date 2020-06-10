@@ -13,3 +13,9 @@ export const changeName = (name) => {
         payload: name
     }
 }
+
+export const handleToken = (token) => 
+    async dispatch => {
+        let res = await axios.post('/api/stripe', token);
+        dispatch({type: FETCH_USER, data: res.data})
+    }
